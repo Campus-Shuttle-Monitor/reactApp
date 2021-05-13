@@ -11,7 +11,6 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY --from=builder /app/build /usr/share/nginx/html
-COPY prod.nginx template.conf
+COPY prod.nginx /etc/nginx/templates/default.conf.template
 ENV PORT 80
 EXPOSE 80
-CMD sh -c "envsubst '\$PORT' < template.conf > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
