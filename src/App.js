@@ -8,6 +8,10 @@ import {
   Polyline
 } from "@react-google-maps/api";
 import mapStyles from "./mapStyles";
+var img = new Image();
+img.src =' ../public/logo.png';
+document.body.appendChild(img);
+document.title= "Campus Shuttle Monitor";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
